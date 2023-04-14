@@ -99,10 +99,10 @@ int main(int, char**)
     io.Fonts->AddFontFromFileTTF("../../misc/fonts/Roboto-Medium.ttf", 16.0f);
 
     // Our state
-    //bool show_demo_window = true;
+    bool show_demo_window = true;
     bool show_task_list_window = true;
     bool show_task_details_window = false;
-    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+    auto clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
     TaskManager taskmanager;
 
     // Main loop
@@ -131,8 +131,8 @@ int main(int, char**)
         ImGui::DockSpaceOverViewport();
 
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
-        //if (show_demo_window)
-        //    ImGui::ShowDemoWindow(&show_demo_window);
+        if (show_demo_window)
+            ImGui::ShowDemoWindow(&show_demo_window);
 
         // 2. Show create task window.
         taskmanager.CreateTaskPanel();
